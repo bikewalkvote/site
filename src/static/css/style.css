@@ -1270,3 +1270,9 @@ td {
     page-break-after: avoid;
   }
 }
+
+
+body #container #content ul.simple {
+  float:none;
+  list-style:none;
+}

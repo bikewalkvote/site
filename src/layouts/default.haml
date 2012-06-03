@@ -33,9 +33,9 @@
   <meta property="og:description" content="Elevating active transportation options in local politics." />
   <!-- END Open Graph -->
 
-  /
-    Uncomment if you are specifically targeting less enabled mobile browsers
-    <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">
+
+  -#  Uncomment if you are specifically targeting less enabled mobile browsers
+  -#  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">
   / All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects
   %script{:src => "js/libs/modernizr-2.0.6.min.js"}
   :javascript
@@ -54,11 +54,11 @@
 
 %body
 
-  / 
+  /
     BEGIN JavaScript SDK (neccessary for HTML5 Facebook like button to work)
     I don't know why loading this from a .js file is not working.  -JJ
   #fb-root
-  :javascript 
+  :javascript
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -72,15 +72,14 @@
     %header
       %h1#logo
         %a{:href => "/", :title => "home"} bike walk vote
-  
+
     #main{:role => "main"}
-      /
-        <form method="get" action="http://www.google.com/search">
-        <input type="text" name="q" value="search" />
-        Do we need a "go" button?
-        <input type="submit" value="Search" />
-        </form>
-        
+      -#  <form method="get" action="http://www.google.com/search">
+      -#  <input type="text" name="q" value="search" />
+      -#  Do we need a "go" button?
+      -#  <input type="submit" value="Search" />
+      -#  </form>
+
       %a{:href => "/about.html", :title => "about bike walk vote"} ABOUT
       %a{:href => "/media.html", :title => "bike walk vote in the media"} MEDIA
       %a#contribute{:href => "/contribute.html", :title => "contribute to bike walk vote"} CONTRIBUTE
@@ -92,26 +91,26 @@
     %section#content
       =yield
     -# -------------------------END PAGE CONTENT --------------------------------------
-  
+
     %aside
       / BEGIN Facebook like button
       .fb-like{"data-href" => "http://www.bikewalkvote.org/", "data-send" => "true", "data-layout" => "box_count", "data-width" => "100", "data-show-faces" => "false",  "data-font" => "trebuchet ms"}
       / END Facebook like button
-    
-      / BEGIN Facebook page link 
-      %div 
+
+      / BEGIN Facebook page link
+      %div
         %a{:href => "http://www.facebook.com/pages/Bike-Walk-Vote/231653533537755", :title => "the bike walk vote facebook page"}
           %img{:src => "/images/f_logo.png", :alt => "bike walk vote facebook page"}
           %p page
-      / END Facebook page link 
-    
-      / BEGIN Twitter page link 
+      / END Facebook page link
+
+      / BEGIN Twitter page link
       %div
         %a{:href=>"http://twitter.com/#!/bikewalkvote", :title => "the bike walk vote twitter stream"}
           %img{:src=>"/images/twitter_newbird_blue.png", :alt => "bike walk vote twitter stream"}
       / END Twitter page link
-    
-      / BEGIN Google +1 button 
+
+      / BEGIN Google +1 button
       .g-plusone{ "data-size" => "tall", "datadata-href" => "http://www.bikewalkvote.org/"}
       / END Google +1 button
 
@@ -122,13 +121,13 @@
 
 
   / ! end of #container
-  
+
   / Javascript at the bottom for fast page loading
   / Grab Google CDN's jQuery. fall back to local if necessary
-  %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"} 
+  %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"}
   :javascript
-    !window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.6.2.min.js"%3E%3C/script%3E'))    
-  
+    !window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.6.2.min.js"%3E%3C/script%3E'))
+
   / scripts concatenated and minified via ant build script
   %script{:src => "/js/plugins.js"}
   %script{:src => "/js/script.js"}
@@ -139,7 +138,7 @@
   -# TODO: load google-analytics from remote server
 
   / end concatenated and minified scripts
-  
+
   /[if lt IE 7 ]
     / PNG Fix
     <script src="js/libs/dd_belatedpng.js"></script>
