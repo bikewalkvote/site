@@ -82,6 +82,7 @@
 
       %a{:href => "/about.html", :title => "about bike walk vote"} ABOUT
       %a{:href => "/media.html", :title => "bike walk vote in the media"} MEDIA
+      %a{:href => "/candidates.html", :title => "candidate responses to our questionaires"} CANDIDATES
       %a#contribute{:href => "/contribute.html", :title => "contribute to bike walk vote"} CONTRIBUTE
       %a{:href => "/", :title => "back to the bike walk vote main page"} HOME
 
@@ -93,15 +94,11 @@
     -# -------------------------END PAGE CONTENT --------------------------------------
 
     %aside
-      / BEGIN Facebook like button
-      .fb-like{"data-href" => "http://www.bikewalkvote.org/", "data-send" => "true", "data-layout" => "box_count", "data-width" => "100", "data-show-faces" => "false",  "data-font" => "trebuchet ms"}
-      / END Facebook like button
-
       / BEGIN Facebook page link
       %div
-        %a{:href => "http://www.facebook.com/pages/Bike-Walk-Vote/231653533537755", :title => "the bike walk vote facebook page"}
+        %a{:href => "http://www.facebook.com/bikewalkvote", :title => "the bike walk vote facebook page"}
           %img{:src => "/images/f_logo.png", :alt => "bike walk vote facebook page"}
-          %p page
+          /%p page
       / END Facebook page link
 
       / BEGIN Twitter page link
@@ -113,6 +110,10 @@
       / BEGIN Google +1 button
       .g-plusone{ "data-size" => "tall", "datadata-href" => "http://www.bikewalkvote.org/"}
       / END Google +1 button
+
+      / BEGIN Facebook like button
+      .fb-like{"data-href" => "http://www.bikewalkvote.org/", "data-send" => "true", "data-layout" => "box_count", "data-width" => "100", "data-show-faces" => "false",  "data-font" => "trebuchet ms"}
+      / END Facebook like button
 
     #push
     %footer
