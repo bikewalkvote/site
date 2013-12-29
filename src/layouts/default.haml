@@ -83,12 +83,6 @@
     -# -------------------------END PAGE CONTENT --------------------------------------
 
     %aside
-      / BEGIN Facebook page link
-      %div
-        %a{:href => "http://www.facebook.com/bikewalkvote", :title => "the bike walk vote facebook page"}
-          %img{:src => "/images/f_logo.png", :alt => "bike walk vote facebook page"}
-          /%p page
-      / END Facebook page link
 
       / BEGIN Twitter page link
       %div
@@ -96,13 +90,21 @@
           %img{:src=>"/images/twitter_newbird_blue.png", :alt => "bike walk vote twitter stream"}
       / END Twitter page link
 
+      / BEGIN Facebook page link
+      %div
+        %a{:href => "http://www.facebook.com/bikewalkvote", :title => "the bike walk vote facebook page"}
+          %img{:src => "/images/f_logo.png", :alt => "bike walk vote facebook page"}
+      /%p page
+      / END Facebook page link
+
+      / BEGIN Facebook like button
+      .fb-like{"data-href" => "http://www.facebook.com/bikewalkvote", "data-send" => "true", "data-layout" => "box_count", "data-width" => "100", "data-show-faces" => "false",  "data-font" => "trebuchet ms"}
+      / END Facebook like button
+
       / BEGIN Google +1 button
       .g-plusone{ "data-size" => "tall", "datadata-href" => "http://www.bikewalkvote.org/"}
       / END Google +1 button
 
-      / BEGIN Facebook like button
-      .fb-like{"data-href" => "http://www.bikewalkvote.org/", "data-send" => "true", "data-layout" => "box_count", "data-width" => "100", "data-show-faces" => "false",  "data-font" => "trebuchet ms"}
-      / END Facebook like button
 
     #push
     %footer
@@ -128,13 +130,12 @@
   -# We only used the twitter code for the Mayoral debate; no longer needed.
   -# TODO: load google-analytics from remote server
 
-  / end concatenated and minified scripts
+  -# end concatenated and minified scripts
 
-
-  / TODO yui profiler and profileviewer - remove for production
-  /%script{:src => "/js/profiling/yahoo-profiling.min.js"}
-  /%script{:src => "/js/profiling/config.js"}
-  / end profiling code
+  -# TODO yui profiler and profileviewer - remove for production
+  -#%script{:src => "/js/profiling/yahoo-profiling.min.js"}
+  -#%script{:src => "/js/profiling/config.js"}
+  -# end profiling code
 
   / Google Analytics
   :javascript
@@ -145,18 +146,16 @@
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-27483955-1');ga('send','pageview');
 
-  /
-    BEGIN JavaScript SDK (neccessary for HTML5 Facebook like button to work)
-    I don't know why loading this from a .js file is not working.  -JJ
+  /BEGIN JavaScript SDK (neccessary for HTML5 Facebook like button to work)
   #fb-root
   :javascript
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=441294915999028";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  / END JavaScript SD
+    }(document, 'script', 'facebook-jssdk'));</script>
+  / END JavaScript SDK
 
 </html>
